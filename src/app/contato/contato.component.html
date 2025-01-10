@@ -1,0 +1,169 @@
+<h2 class="contact__title">Entre em contato</h2>
+<section class="contact__container">
+  <form class="contact-form" [formGroup]="formContato" (ngSubmit)="enviarFormulario()">
+    <input
+      type="text"
+      placeholder="Digite o seu nome"
+      formControlName="nome"
+      [class.valid]="formContato.controls['nome'].valid"
+      [class.invalid]="
+        formContato.controls['nome'].invalid &&
+        (formContato.controls['nome'].touched ||
+          formContato.controls['nome'].dirty)
+      "
+    />
+    <div
+      *ngIf="
+        formContato.controls['nome'].invalid &&
+        (formContato.controls['nome'].touched ||
+          formContato.controls['nome'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['nome'].hasError('minlength')"
+      >
+        Informação inválida, número mínimo de caracteres insuficiente.
+      </small>
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['nome'].hasError('required')"
+      >
+        Preenchimento obrigatório.
+      </small>
+    </div>
+
+    <input type="assunto" placeholder="Digite o assunto" formControlName="assunto"
+    [class.valid]="formContato.controls['assunto'].valid"
+    [class.invalid]="
+      formContato.controls['assunto'].invalid &&
+      (formContato.controls['assunto'].touched ||
+        formContato.controls['assunto'].dirty)
+    " />
+    <div
+      *ngIf="
+        formContato.controls['assunto'].invalid &&
+        (formContato.controls['assunto'].touched ||
+          formContato.controls['assunto'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['assunto'].hasError('minlength')"
+      >
+        Informação inválida, número mínimo de caracteres insuficiente.
+      </small>
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['assunto'].hasError('required')"
+      >
+        Preenchimento obrigatório.
+      </small>
+    </div>
+
+    <input type="tel" placeholder="(99)99999-9999" mask="(00) 00000-0000" formControlName="telefone"
+    [class.valid]="formContato.controls['telefone'].valid"
+    [class.invalid]="
+      formContato.controls['telefone'].invalid &&
+      (formContato.controls['telefone'].touched ||
+        formContato.controls['telefone'].dirty)
+    " />
+    <div
+      *ngIf="
+        formContato.controls['telefone'].invalid &&
+        (formContato.controls['telefone'].touched ||
+          formContato.controls['telefone'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['telefone'].hasError('minlength')"
+      >
+        Informação inválida, número mínimo de caracteres insuficiente.
+      </small>
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['telefone'].hasError('required')"
+      >
+        Preenchimento obrigatório.
+      </small>
+    </div>
+
+    <input type="email" placeholder="Digite seu e-mail" formControlName="email"
+    [class.valid]="formContato.controls['email'].valid"
+    [class.invalid]="
+      formContato.controls['email'].invalid &&
+      (formContato.controls['email'].touched ||
+        formContato.controls['email'].dirty)
+    " />
+    <div
+      *ngIf="
+        formContato.controls['email'].invalid &&
+        (formContato.controls['email'].touched ||
+          formContato.controls['email'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['email'].hasError('email')"
+      >
+        Formato de e-mail inválido.
+      </small>
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['email'].hasError('required')"
+      >
+        Preenchimento obrigatório.
+      </small>
+    </div>
+
+    <textarea
+      maxlength="300"
+      rows="10"
+      placeholder="Digite sua mensagem"
+      formControlName="mensagem"
+      [class.valid]="formContato.controls['mensagem'].valid"
+      [class.invalid]="
+        formContato.controls['mensagem'].invalid &&
+        (formContato.controls['mensagem'].touched ||
+          formContato.controls['mensagem'].dirty)
+      "
+    ></textarea>
+    <div
+      *ngIf="
+        formContato.controls['mensagem'].invalid &&
+        (formContato.controls['mensagem'].touched ||
+          formContato.controls['mensagem'].dirty)
+      "
+    >
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['mensagem'].hasError('minlength')"
+      >
+        Informação inválida, número mínimo de caracteres insuficiente.
+      </small>
+      <small
+        class="error-message"
+        *ngIf="formContato.controls['mensagem'].hasError('required')"
+      >
+        Preenchimento obrigatório.
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="formContato.invalid" (click)="enviarFormulario()">Enviar</button>
+  </form>
+
+  <address>
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26066.354824111284!2d-46.63690410892511!3d-23.557258754759335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59abb2b2eef1%3A0xfdb32e67a44103f5!2sCatedral%20Metropolitana%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1666914560336!5m2!1spt-BR!2sbr"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <p>Praça da Sé - Sé, São Paulo - SP, 01001-000</p>
+  </address>
+</section>

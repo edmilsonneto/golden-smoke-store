@@ -1,0 +1,78 @@
+<header class="main-header">
+  <h1 class="main-header__title">
+    <span class="main-header__title--blue">Loja</span
+    ><span class="main-header__title--orange">Computers</span>
+  </h1>
+  <div class="container-menu">
+    <nav class="main-header__menu">
+      <ul>
+        <li><a routerLink="produtos">Produtos</a></li>
+
+        <li>
+          <a routerLink="carrinho">
+            <img
+              src="../../assets/cart-shopping.svg"
+              alt="Ícone carrinho de compras"
+              width="576"
+              height="512"
+            />
+            Carrinho
+            <span class="badge-carrinho">{{ carrinhoService.obtemCarrinho().length }}</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="contato">Contato</a>
+        </li>
+      </ul>
+
+      <ul class="social-media">
+        <li>
+          <a href="https://www.facebook.com/">
+            <img
+              src="../../assets/square-facebook.svg"
+              alt="Ícone Facebook"
+              width="448"
+              height="512"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/">
+            <img
+              src="../../assets/instagram.svg"
+              alt="Ícone Instagram"
+              width="448"
+              height="512"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="https://twitter.com/">
+            <img
+              src="../../assets/twitter.svg"
+              alt="Ícone Twitter"
+              width="512"
+              height="512"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/">
+            <img
+              src="../../assets/linkedin.svg"
+              alt="Ícone Linkedin"
+              width="448"
+              height="512"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <app-barra-pesquisa></app-barra-pesquisa>
+  </div>
+</header>
